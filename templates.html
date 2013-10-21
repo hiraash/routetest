@@ -1,0 +1,34 @@
+<template name="baseLayout">
+  <h1>Router Test{{empty}}</h1>
+  <div>{{yield 'secTop'}}</div>
+  <div>{{yield}}</div>
+  <div>{{yield 'secBottom'}}</div>
+</template>
+
+<template name="olympus">
+  <h3>The Olympus has Fallen</h3>
+  <p>{{yield 'desc'}}</p>
+  <a href="{{pathFor 'gatsby'}}">Gatsby</a>
+</template>
+
+<template name="olympusDesc">
+  Disgraced former Presidential guard Mike Banning finds himself trapped inside the White House in the wake of a terrorist attack; using his inside knowledge, Banning works with national security to rescue the President from his kidnappers.
+</template>
+
+<template name="gatsby">
+  <h3>The Great Gatsby</h3>
+  <p>{{yield 'desc'}}</p>
+  <a href="{{pathFor 'olympus'}}">Olympus</a>
+</template>
+
+<template name="gatsbyDesc">
+	A Midwestern war veteran finds himself drawn to the past and lifestyle of his millionaire neighbor.
+</template>
+
+<template name="headTpl">
+	<a href="{{pathFor 'home'}}">{{welcome}}</a>
+</template>
+
+<template name="footTpl">
+  <a href="https://github.com/hiraash/routetest">See this on GitHub</a>
+</template>
