@@ -1,19 +1,24 @@
 if (Meteor.isClient) {
-  Template.hello.greeting = function () {
+  Template.headTpl.welcome = function () {
+    console.log('Rendering headTpl')
     return "Welcome to routetest.";
   };
 
-  Template.hello.events({
-    'click input' : function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
-    }
-  });
-}
+  Template.headTpl.rendered = function () {
+    console.log('Rendered headTpl')
+  };
 
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
+  Template.footTpl.rendered = function () {
+    console.log('Rendered footTpl')
+  };
+
+  Template.baseLayout.empty = function () {
+    console.log('Rendering baseLayout')
+    return '';
+  };
+
+  Template.baseLayout.rendered = function () {
+    console.log('Rendered baseLayout')
+  };
+  
 }
